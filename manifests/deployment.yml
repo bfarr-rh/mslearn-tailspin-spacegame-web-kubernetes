@@ -16,7 +16,9 @@ spec:
         - name: web
           image: tailspinspacegame11760.azurecr.io/web
           ports:
-          - containerPort: 80
+          - containerPort: 8080
+      imagePullSecrets:
+        - name: acr-tailspinspacegame11760
 ---
 apiVersion : apps/v1
 kind: Deployment
@@ -36,4 +38,6 @@ spec:
         - name: leaderboard
           image: tailspinspacegame11760.azurecr.io/leaderboard
           ports:
-          - containerPort: 80
+          - containerPort: 8080
+      imagePullSecrets:
+        - name: acr-tailspinspacegame11760
