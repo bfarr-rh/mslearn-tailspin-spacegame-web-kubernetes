@@ -63,14 +63,14 @@ stages:
               action: createSecret
               secretName: $(imagePullSecret)
               dockerRegistryEndpoint: 'Container Registry Connection'
-              kubernetesServiceConnection: 'openshift-sandbox-stage-stefan-bergstein-stage-1621770433872'
-              namespace: 'stefan-bergstein-stage'            
+              kubernetesServiceConnection: 'Kubernetes Cluster Connection'
+              namespace: 'spacegame-stage'            
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
             inputs:
               action: deploy
-              kubernetesServiceConnection: 'openshift-sandbox-stage-stefan-bergstein-stage-1621770433872'
-              namespace: 'stefan-bergstein-stage'
+              kubernetesServiceConnection: 'Kubernetes Cluster Connection'
+              namespace: 'spacegame-stage'
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml
