@@ -48,7 +48,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: 'ubuntu-18.04'
-    environment: 'openshift-sandbox-stage.stefan-bergstein-stage'
+    environment: 'openshift-sandbox-stage'
     variables:
     - group: Release
     strategy:
