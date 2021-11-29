@@ -1,5 +1,5 @@
 trigger:
-- 'master'
+- 'openshift_sandbox'
 
 variables:
   buildConfiguration: 'Release'
@@ -48,7 +48,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: 'ubuntu-18.04'
-    environment: 'openshift-sandbox-stage'
+    environment: 'Openshift.spacegame-stage'
     variables:
     - group: Release
     strategy:
